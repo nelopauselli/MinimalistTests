@@ -1,31 +1,24 @@
 #include "MinimalistTests.h"
 
-bool starting = false;
-bool started = false;
-
 void setup() {
-  starting = true;
-
   Serial.begin(9600);
 
-  TestSuite suite = TestSuite("My setup tests");
+  TestSuite suite = TestSuite("Mis tests en setup()");
   suite.test("testing setup", setup_test);
-
-  started = true;
 }
 
 void loop() {
-  TestSuite suite = TestSuite("My loop tests");
+  TestSuite suite = TestSuite("Mis tests en loop()");
   suite.test("testing loop", loop_test);
 
   delay(10000);
 }
 
 void setup_test(TestContext &context){
-	context.isTrue(starting, "Setup should be rinning now");
-	context.isTrue(!started, "Setup should run only once time");
+  int a = 1;
+	context.assertTrue(a==1, "a debía ser igual a 1");
 }
 
 void loop_test(TestContext &context){
-	context.isTrue(millis() > 0, "Millis should be greater than 0");
+	context.assertTrue(millis() > 0, "millis() debe ser mayor a cero");
 }

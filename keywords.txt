@@ -18,7 +18,7 @@ TestSuite	KEYWORD1
 #######################################
 
 test	KEYWORD2
-isTrue	KEYWORD2
+assertTrue	KEYWORD2
 fail	KEYWORD2
 
 #######################################

@@ -35,7 +35,7 @@ public:
         report();
     }
 
-    void isTrue(bool assertion, const char* message)
+    void assertTrue(bool assertion, const char* message)
     {
         tests++;
         if(!assertion)

@@ -7,12 +7,12 @@ int suma(int n1, int n2)
 
 void prueba1(TestContext& context)
 {
-    context.isTrue(suma(1, 1)==3, "se esperaba que 1+1 sea igual a 3");
+    context.assertTrue(suma(1, 1)==3, "se esperaba que 1+1 sea igual a 3");
 }
 
 void prueba2(TestContext& context)
 {
-    context.isTrue(suma(2, 2)==4, "se esperaba que 2+2 sea igual a 4");
+    context.assertTrue(suma(2, 2)==4, "se esperaba que 2+2 sea igual a 4");
 }
 
 void prueba_e(TestContext& context)
