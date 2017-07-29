@@ -17,7 +17,6 @@ public:
     }
     void test(const char *name, void (*callback) (TestContext&) )
     {
-
         TestContext *context = new TestContext(name);
 #ifndef ARDUINO
         try

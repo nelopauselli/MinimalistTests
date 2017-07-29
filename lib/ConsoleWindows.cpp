@@ -7,32 +7,49 @@
 
 using namespace std;
 
-
 class ConsoleWindows : public Console
 {
-public:
-    void info(const char *message)
+  public:
+    void running(int indent, const char *name)
     {
         short color = getConsoleColor();
         setConsoleColor(2);
-        cout << message << endl;
+
+        printHeader(indent);
+        cout << "Running " << name << endl;
+
         setConsoleColor(color);
     }
-    void error(const char *message)
+    void fail(int indent, const char *message)
     {
         short color = getConsoleColor();
         setConsoleColor(12);
+
+        printHeader(indent);
         cout << message << endl;
+
         setConsoleColor(color);
     }
-    void warning(const char *message)
+    void complete(int indent, const char *name, int tests, int fails, int success)
     {
-        short color = getConsoleColor();
-        setConsoleColor(6);
-        cout << message << endl;
-        setConsoleColor(color);
+        short oldColor = getConsoleColor();
+        short currentColor = (fails > 0) ? 12 : (success > 0) ? 2 : 6;
+        setConsoleColor(12);
+        setConsoleColor(currentColor);
+
+        printHeader(indent);
+
+        cout << name << " complete. " << tests << " tests. " << fails << " fails. " << success << " success." << endl;
+
+        setConsoleColor(oldColor);
     }
-private:
+  private:
+    void printHeader(int indent)
+    {
+
+        for (int i = 0; i < indent; i++)
+            cout << '\t';
+    }
     short getConsoleColor()
     {
         CONSOLE_SCREEN_BUFFER_INFO info;
@@ -41,7 +58,6 @@ private:
         short ret = info.wAttributes;
         return ret;
     }
-
     void setConsoleColor(short color)
     {
         HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);

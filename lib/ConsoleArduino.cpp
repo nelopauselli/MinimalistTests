@@ -7,20 +7,48 @@
 class ConsoleArduino : public Console
 {
   public:
-    void info(const char *message)
+    void running(int indent, const char *name)
     {
-        Serial.print("[INFO] ");
+        printHeader(indent);
+
+        Serial.print("Running ");
+        Serial.println(name);
+    }
+
+void fail(int indent, const char *message)
+    {
+        printHeader(indent);
+
+        Serial.print("ERROR: ");
         Serial.println(message);
     }
-    void error(const char *message)
+
+    void complete(int indent, const char *name, int tests, int fails, int success)
     {
-        Serial.print("[ERROR] ");
-        Serial.println(message);
+        printHeader(indent);
+        if (tests == 0)
+            Serial.print("WARN: ");
+            
+        Serial.print(name);
+        Serial.println(" complete. ");
+
+        Serial.print(tests);
+        Serial.print(" tests. ");
+        Serial.print(fails);
+        Serial.print(" fails. ");
+        Serial.print(success);
+        Serial.println(" success.");
     }
-    void warning(const char *message)
+
+  private:
+    void printHeader(int indent)
     {
-        Serial.print("[WARN] ");
-        Serial.println(message);
+        Serial.print("[");
+        Serial.print(millis());
+        Serial.print("]");
+        
+        for (int i = 0; i < indent; i++)
+            Serial.print("\t");
     }
 };
 

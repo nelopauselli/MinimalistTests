@@ -4,7 +4,9 @@ void setup() {
   Serial.begin(9600);
 
   TestSuite suite = TestSuite("Mis tests en setup()");
+  delay(10);
   suite.test("testing setup", setup_test);
+  delay(10);
 }
 
 void loop() {

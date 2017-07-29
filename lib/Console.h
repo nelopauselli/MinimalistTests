@@ -3,9 +3,9 @@
 
 class Console {
 public:
-    void info(const char *message);
-    void error(const char *message);
-    void warning(const char *message);
+    void running(int indent, const char *name);
+    void fail(int indent, const char *message);
+    void complete(int indent, const char *name, int tests, int fails, int success);
 };
 
 #endif // CONSOLE_CLASS
