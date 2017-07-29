@@ -1,4 +1,4 @@
-[versión en español](#Español)
+[versión en español](#español)
 # Minimalist Tests
 C++ and Arduino minimalist tests, without #define, pure C++
 
