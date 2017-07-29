@@ -1,10 +1,8 @@
-[versión en español](/docs/README-es.md)
-
-[versión en español](#spanish)
+[versión en español](#Español)
 # Minimalist Tests
 C++ and Arduino minimalist tests, without #define, pure C++
 
 ## Getting Start
 
-# Spanish
+# Español
 Tests minimalistas para C++ and Arduino, sin #define, puro C++
