@@ -15,7 +15,7 @@ class ConsoleArduino : public Console
         Serial.println(name);
     }
 
-void fail(int indent, const char *message)
+    void fail(int indent, const char *message)
     {
         printHeader(indent);
 
@@ -28,9 +28,9 @@ void fail(int indent, const char *message)
         printHeader(indent);
         if (tests == 0)
             Serial.print("WARN: ");
-            
+
         Serial.print(name);
-        Serial.println(" complete. ");
+        Serial.print(" complete. ");
 
         Serial.print(tests);
         Serial.print(" tests. ");
@@ -45,8 +45,8 @@ void fail(int indent, const char *message)
     {
         Serial.print("[");
         Serial.print(millis());
-        Serial.print("]");
-        
+        Serial.print("] ");
+
         for (int i = 0; i < indent; i++)
             Serial.print("\t");
     }

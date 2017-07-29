@@ -23,15 +23,13 @@ class TestContext
         fails = 0;
         success = 0;
 
-        Console.running(level, name);
+        Console.running(level++, name);
         _name = name;
-        level++;
     }
 
     ~TestContext()
     {
-        level--;
-        Console.complete(level, _name, tests, fails, success);
+        Console.complete(--level, _name, tests, fails, success);
     }
 
     void assertTrue(bool assertion, const char *message)
