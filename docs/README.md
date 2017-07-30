@@ -1,5 +1,5 @@
 # Minimalist Tests
-Framework minimalista de testing para C++ y Arduino
+Minimalist framework to testing C++ **and** Arduino
 
 ## Arduino
 See [Arduino example](/examples/Testing_setup_and_loop/Testing_setup_and_loop.ino) 
@@ -8,22 +8,20 @@ See [Arduino example](/examples/Testing_setup_and_loop/Testing_setup_and_loop.in
 ```cpp
 #include "MinimalistTests.h"
 ```
-### Create a TestSuite
+### 2. Create a TestSuite
 ```cpp
   TestSuite suite = TestSuite("Name of tests group");
 ```
 the code is creating a TestSuite called **Name of tests group**
 
-### Test a case
+### 3. Run a test cases
 ```cpp
   suite.test("Test name", functionWithTestCode);
   suite.test("Other test", otherFunctionWithTestCode);
 ```
-the code is run a test called **Test name** calling to **functionWithTestCode**
+the code is run two test (called **Test name** and **Other test**) calling to **functionWithTestCode** and **otherFunctionWithTestCode**
 
-the code is run a test called **Other test** calling to **otherFunctionWithTestCode**
-
-### Function with test code
+### 4. Function with the test code
 ```cpp
 void functionWithTestCode(TestContext &context){
 	context.assertTrue(1+1==2, "1+1 should be equal 2");
