@@ -44,6 +44,44 @@ class TestContext
             success++;
         }
     }
+    void assertAreEqual(char *expected, char *value, const char *message)
+    {
+        tests++;
+
+        bool assertion = expected != NULL && value != NULL &&
+                         strlen(expected) == strlen(value) &&
+                         strcmp(expected, value) == 0;
+        if (!assertion)
+        {
+            fail(message);
+        }
+        else
+        {
+            success++;
+        }
+    }
+    void assertAreEqual(char *expected, char *value)
+    {
+        tests++;
+
+        bool assertion = expected != NULL && value != NULL &&
+                         strlen(expected) == strlen(value) &&
+                         strcmp(expected, value) == 0;
+        if (!assertion)
+        {
+            int length = strlen(expected) + strlen(value) + 17 + 1;
+            char *message = new char[length];
+            strcpy(message, expected);
+            strcat(message, " is not equal to ");
+            strcat(message, value);
+            strcat(message, '\0');
+            fail((const char *)message);
+        }
+        else
+        {
+            success++;
+        }
+    }
     void fail(const char *message)
     {
         fails++;
