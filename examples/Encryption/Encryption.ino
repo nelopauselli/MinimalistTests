@@ -3,9 +3,9 @@
 void setup()
 {
   Serial.begin(9600);
-  TestSuite suite = TestSuite("Tests de encriptacion");
-  suite.test("Encriptar ABC", encryptABCTest);
-  suite.test("Encriptar XXXX", encryptXXXXTest);
+  TestSuite suite = TestSuite("Tests de encriptacion"); // creo un grupo de pruebas
+  suite.test("Encriptar ABC", encryptABCTest); // ejecuto la primera prueba
+  suite.test("Encriptar XXXX", encryptXXXXTest); // ejecuto la segunda prueba
 }
 
 void loop() {}
@@ -32,15 +32,15 @@ void encrypt(char *source, char *buffer)
  */
 void encryptABCTest(TestContext &context)
 {
-  char buffer[16];
-  encrypt("ABC", buffer);
-  context.assertTrue(3 == strlen(buffer), "Tamaño incorrecto!");
-  context.assertAreEqual("CDE", buffer, "Resultado incorrecto!");
+  char buffer[16]; // creo un buffer para el resultado
+  encrypt("ABC", buffer); // encripto la cadena ABC en el buffer
+  context.assertTrue(3 == strlen(buffer), "Tamaño incorrecto!"); // verifico que el tamaño de la cadena encriptada sea el esperado
+  context.assertAreEqual("CDE", buffer, "Resultado incorrecto!"); // verifico que el contenido de la cadena encriptada sea el esperado
 }
 
 void encryptXXXXTest(TestContext &context)
 {
-  char buffer[16];
-  encrypt("XXXX", buffer);
+  char buffer[16]; // creo un buffer para el resultado
+  encrypt("XXXX", buffer); // encripto la cadena XXXX en el buffer
   context.assertAreEqual("ZZZX", buffer); // esta afirmación va a fallar.
 }
