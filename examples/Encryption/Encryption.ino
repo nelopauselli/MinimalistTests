@@ -42,5 +42,5 @@ void encryptXXXXTest(TestContext &context)
 {
   char buffer[16];
   encrypt("XXXX", buffer);
-  context.assertAreEqual("ZZZX", buffer);
+  context.assertAreEqual("ZZZX", buffer); // esta afirmación va a fallar.
 }
