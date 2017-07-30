@@ -10,14 +10,14 @@ See [Arduino example](/examples/Testing_setup_and_loop/Testing_setup_and_loop.in
 ```
 ### 2. Create a TestSuite
 ```cpp
-	TestSuite suite = TestSuite("My tests group");
+TestSuite suite = TestSuite("My tests group");
 ```
 this code is creating a TestSuite named **My tests group**
 
 ### 3. Run test cases
 ```cpp
-	suite.test("My sums test", testSums);
-	suite.test("My millis test", testMillis);
+suite.test("My sums test", testSums);
+suite.test("My millis test", testMillis);
 ```
 this code is running two test case named **My sum test** and **My millis test**, calling to **testSums** and to **testMillis** respectively
 
