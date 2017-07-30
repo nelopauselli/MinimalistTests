@@ -10,25 +10,25 @@ See [Arduino example](/examples/Testing_setup_and_loop/Testing_setup_and_loop.in
 ```
 ### 2. Create a TestSuite
 ```cpp
-  TestSuite suite = TestSuite("Name of tests group");
+  TestSuite suite = TestSuite("My tests group");
 ```
-this code is creating a TestSuite called **Name of tests group**
+this code is creating a TestSuite named **My tests group**
 
 ### 3. Run test cases
 ```cpp
-  suite.test("Test name", functionWithTestCode);
-  suite.test("Other test", otherFunctionWithTestCode);
+  suite.test("My sum test", testSum1p1e2);
+  suite.test("My millis test", testMillis);
 ```
-this code is run two test called **Test name** and **Other test**, calling to **functionWithTestCode** and **otherFunctionWithTestCode** respectively
+this code is running two test case named **My sum test** and **My millis test**, calling to **testSum1p1e2** and to **testMillis** respectively
 
 ### 4. Function with the test code
 ```cpp
-void functionWithTestCode(TestContext &context){
+void testSum1p1e2(TestContext &context){
 	context.assertTrue(1+1==2, "1+1 should be equal 2");
 }
 
-void otherFunctionWithTestCode(TestContext &context){
+void testMillis(TestContext &context){
 	context.assertTrue(millis() > 0, "millis() should be greater than 0");
 }
 ```
-Here is two function with test code, they receive a parameter of type TestContext by reference, it contains method as assertTrue to make asserts
+Here is two function with test code, they receive a parameter of type TestContext by **reference**, it contains methods as assertTrue to do assertions
