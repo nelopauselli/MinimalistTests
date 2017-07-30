@@ -19,7 +19,7 @@ this code is creating a TestSuite named **My tests group**
 suite.test("My sums test", testSums);
 suite.test("My millis test", testMillis);
 ```
-this code is running two test case named **My sum test** and **My millis test**, calling to **testSums** and to **testMillis** respectively
+this code is running two test case named **My sums test** and **My millis test**, calling to **testSums** and to **testMillis** respectively
 
 ### 4. Function with the test code
 ```cpp
