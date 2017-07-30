@@ -10,21 +10,23 @@ See [Arduino example](/examples/Testing_setup_and_loop/Testing_setup_and_loop.in
 ```
 ### 2. Create a TestSuite
 ```cpp
-  TestSuite suite = TestSuite("My tests group");
+	TestSuite suite = TestSuite("My tests group");
 ```
 this code is creating a TestSuite named **My tests group**
 
 ### 3. Run test cases
 ```cpp
-  suite.test("My sum test", testSum1p1e2);
-  suite.test("My millis test", testMillis);
+	suite.test("My sums test", testSums);
+	suite.test("My millis test", testMillis);
 ```
 this code is running two test case named **My sum test** and **My millis test**, calling to **testSum1p1e2** and to **testMillis** respectively
 
 ### 4. Function with the test code
 ```cpp
-void testSum1p1e2(TestContext &context){
+void testSums(TestContext &context){
 	context.assertTrue(1+1==2, "1+1 should be equal 2");
+	context.assertTrue(2+2==4, "2+2 should be equal 4");
+	context.assertTrue(0+2==2, "0+2 should be equal 2");
 }
 
 void testMillis(TestContext &context){
