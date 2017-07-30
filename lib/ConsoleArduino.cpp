@@ -23,17 +23,17 @@ class ConsoleArduino : public Console
         Serial.println(message);
     }
 
-    void complete(int indent, const char *name, int tests, int fails, int success)
+    void complete(int indent, const char *name, int asserts, int fails, int success)
     {
         printHeader(indent);
-        if (tests == 0)
+        if (asserts == 0)
             Serial.print("WARN: ");
 
         Serial.print(name);
         Serial.print(" complete. ");
 
-        Serial.print(tests);
-        Serial.print(" tests. ");
+        Serial.print(asserts);
+        Serial.print(" asserts. ");
         Serial.print(fails);
         Serial.print(" fails. ");
         Serial.print(success);

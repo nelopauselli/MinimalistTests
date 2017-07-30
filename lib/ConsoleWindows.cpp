@@ -30,7 +30,7 @@ class ConsoleWindows : public Console
 
         setConsoleColor(color);
     }
-    void complete(int indent, const char *name, int tests, int fails, int success)
+    void complete(int indent, const char *name, int asserts, int fails, int success)
     {
         short oldColor = getConsoleColor();
         short currentColor = (fails > 0) ? 12 : (success > 0) ? 2 : 6;
@@ -39,10 +39,11 @@ class ConsoleWindows : public Console
 
         printHeader(indent);
 
-        cout << name << " complete. " << tests << " tests. " << fails << " fails. " << success << " success." << endl;
+        cout << name << " complete. " << asserts << " asserts. " << fails << " fails. " << success << " success." << endl;
 
         setConsoleColor(oldColor);
     }
+
   private:
     void printHeader(int indent)
     {
