@@ -12,14 +12,14 @@ See [Arduino example](/examples/Testing_setup_and_loop/Testing_setup_and_loop.in
 ```cpp
   TestSuite suite = TestSuite("Name of tests group");
 ```
-the code is creating a TestSuite called **Name of tests group**
+this code is creating a TestSuite called **Name of tests group**
 
-### 3. Run a test cases
+### 3. Run test cases
 ```cpp
   suite.test("Test name", functionWithTestCode);
   suite.test("Other test", otherFunctionWithTestCode);
 ```
-the code is run two test (called **Test name** and **Other test**) calling to **functionWithTestCode** and **otherFunctionWithTestCode**
+this code is run two test called **Test name** and **Other test**, calling to **functionWithTestCode** and **otherFunctionWithTestCode** respectively
 
 ### 4. Function with the test code
 ```cpp
