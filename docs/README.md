@@ -33,4 +33,4 @@ void testMillis(TestContext &context){
 	context.assertTrue(millis() > 0, "millis() should be greater than 0");
 }
 ```
-Here is two function with test code, they receive a parameter of type TestContext by **reference**, it contains methods as assertTrue to do assertions
+Here is two function with test code, they receive a parameter of type TestContext by **reference**, it contains methods as assertTrue and assertAreEqual to do assertions
