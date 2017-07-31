@@ -69,12 +69,12 @@ class TestContext
                          strcmp(expected, value) == 0;
         if (!assertion)
         {
-            int length = strlen(expected) + strlen(value) + 17 + 1;
+            const char* join=" is not equal to ";
+            int length = strlen(expected) + strlen(value) + strlen(join) + 1;
             char *message = new char[length];
             strcpy(message, expected);
-            strcat(message, " is not equal to ");
+            strcat(message, join);
             strcat(message, value);
-            strcat(message, '\0');
             fail((const char *)message);
         }
         else
